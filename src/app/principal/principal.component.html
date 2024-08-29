@@ -1,0 +1,37 @@
+<!-- Para a utilização do ngModel e necessário colocar a caracteristica em cada um dos inputs o ngModel permitira refletir os dados a ser preenchidos nos campos em outro lugar especificado isso e chamado de two way data bind-->
+
+<form >
+    <img src="assets/cliente.png">
+
+    <input type="text" placeholder="Nome"     name="nome" class="form-control" [(ngModel)]="cliente.nome">
+    <input type="number" placeholder="Idade"  name="idade" class="form-control" [(ngModel)]="cliente.idade">
+    <input type="text" placeholder="Cidade"   name="cidade" class="form-control" [(ngModel)]="cliente.cidade">
+
+    <input type="button" value="Cadastrar"    *ngIf="btnPrincipal" class="btn btn-primary" (click)="cadastrar()">
+    <input type="button" value="Alterar"      *ngIf="!btnPrincipal" class="btn btn-warning">
+    <input type="button" value="Remover"      *ngIf="!btnPrincipal" class="btn btn-danger" (click)="remover()">
+    <input type="button" value="Cancelar"     *ngIf="!btnPrincipal" class="btn btn-secondary" (click)="cancelar()">
+</form>
+
+<table class="table" *ngIf="tabela">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cidade</th>
+            <th>Selecionar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let c of clientes; index as i">
+            <td>{{i+1}}</td>
+            <td>{{ c.nome }}</td>
+            <td>{{ c.idade }}</td>
+            <td>{{ c.cidade }}</td>
+            <td><button class="btn btn-success" (click)="selecionarCliente(i)">Selecionar</button></td>
+        </tr>
+    </tbody>
+
+</table>
