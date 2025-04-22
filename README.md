@@ -28,6 +28,10 @@ Este é um projeto de exemplo que implementa uma aplicação CRUD (Create, Read,
 - **Node.js** e **npm** para gerenciamento de pacotes Angular
 - **Angular CLI** para criar e gerenciar o projeto Angular
 
+## Backend
+
+- https://github.com/thiago-cloud/Cadastro_De_Cliente-api_backend
+
 ### Campos no modelo principal
 
 <ul>
